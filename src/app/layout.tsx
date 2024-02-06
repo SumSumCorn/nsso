@@ -3,7 +3,11 @@ import { Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 
-const noto = Noto_Sans_KR({ subsets: ['latin'], variable: '--font-noto' });
+const noto = Noto_Sans_KR({
+  subsets: ['latin'],
+  variable: '--font-noto',
+  weight: ['400', '900'],
+});
 
 export const metadata: Metadata = {
   title: 'nsso',
@@ -18,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          noto.variable
-        )}
+        className={
+          noto.className
+          // cn(
+          // 'min-h-screen bg-background font-sans antialiased bg-[#6D8954]',
+          // noto.variable
+        }
       >
         {children}
       </body>
